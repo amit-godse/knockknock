@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace KnockKnock.Api.Test
 {
     [TestClass]
-    public class FibonacciTest
+    public class ControllerTests
     {
         //
         // System under test
@@ -62,11 +62,13 @@ namespace KnockKnock.Api.Test
         [TestMethod]
         public async Task GetShape_Should_Return_Shape()
         {
+            //assemble
+            var expected = "Equilateral";
             //act
-            var response = await _sut.Client.GetAsync("/api/ReverseWords?sentence=is not valid");
+            var response = await _sut.Client.GetAsync("/api/TriangleType?a=10&b=10&c=10");
             var result = response.Content.ReadAsStringAsync().Result;
             Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
-            Assert.AreEqual(result, "si ton dilav");
+            Assert.AreEqual(result, expected);
         }
     }
 }

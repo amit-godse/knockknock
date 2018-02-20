@@ -16,9 +16,9 @@ namespace KnockKnock.Api.Controllers
 
         // GET api/values/5
         [HttpGet]
-        public ShapeType Get(string a, string b, string c)
+        public string Get(string a, string b, string c)
         {
-            return Service.GetTriangleType(a, b, c);
+            return Service.GetTriangleType(a, b, c).ToString();
         }
     }
 }

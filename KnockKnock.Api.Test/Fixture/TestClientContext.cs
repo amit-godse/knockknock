@@ -1,10 +1,11 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 
 namespace KnockKnock.Api.Test.Fixture
 {
-    public class TestClientContext
+    public class TestClientContext : IDisposable
     {
         private TestServer _server;
 
@@ -21,6 +22,12 @@ namespace KnockKnock.Api.Test.Fixture
                 .UseStartup<Startup>());
 
             Client = _server.CreateClient();
+        }
+
+        public void Dispose()
+        {
+            _server?.Dispose();
+            Client?.Dispose();
         }
     }
 }
