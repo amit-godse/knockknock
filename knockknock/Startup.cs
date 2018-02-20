@@ -52,7 +52,7 @@ namespace KnockKnock.Api
 
             app.UseMiddleware(typeof(ErrorHandlingMiddleware));
 
-            app.UseMvc();
+            app.UseMvc(route => route.MapRoute("default","swagger/"));
         }
     }
 }
