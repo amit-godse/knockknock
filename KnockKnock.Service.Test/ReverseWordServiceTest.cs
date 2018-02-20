@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using KnockKnock.Logic;
+﻿using KnockKnock.Logic;
 using KnockKnock.Service.Concrete;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -11,12 +8,12 @@ namespace KnockKnock.Service.Test
     [TestClass]
     public class ReverseWordServiceTest
     {
+        private Mock<IReverseWordsLogic> _logic;
         //
         // System Under Test
         //
 
         private ReverseWordsService _sut;
-        private Mock<IReverseWordsLogic> _logic;
 
         [TestInitialize]
         public void Setup()

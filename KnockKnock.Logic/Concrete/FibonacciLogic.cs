@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace KnockKnock.Logic.Concrete
 {
@@ -29,10 +27,7 @@ namespace KnockKnock.Logic.Concrete
                 stackTop = topValue;
             }
 
-            if (input < 0 && input % 2 == 0)
-            {
-                return stackTop * -1;
-            }
+            if (input < 0 && input % 2 == 0) return stackTop * -1;
 
             return stackTop;
         }

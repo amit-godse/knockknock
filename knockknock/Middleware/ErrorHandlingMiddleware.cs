@@ -8,18 +8,18 @@ namespace KnockKnock.Api.Middleware
 {
     public class ErrorHandlingMiddleware
     {
-        private readonly RequestDelegate next;
+        private readonly RequestDelegate _next;
 
         public ErrorHandlingMiddleware(RequestDelegate next)
         {
-            this.next = next;
+            _next = next;
         }
 
         public async Task Invoke(HttpContext context /* other scoped dependencies */)
         {
             try
             {
-                await next(context);
+                await _next(context);
             }
             catch (Exception ex)
             {
@@ -31,7 +31,7 @@ namespace KnockKnock.Api.Middleware
         {
             var code = HttpStatusCode.BadRequest; // 500 if unexpected
             context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int) code;
+            context.Response.StatusCode = (int)code;
 
             if (exception is ArgumentOutOfRangeException)
             {
@@ -39,7 +39,7 @@ namespace KnockKnock.Api.Middleware
                 return context.Response.WriteAsync(string.Empty);
             }
 
-            var result = JsonConvert.SerializeObject(new {message = "The request is invalid."});
+            var result = JsonConvert.SerializeObject(new { message = "The request is invalid." });
 
             return context.Response.WriteAsync(result);
         }

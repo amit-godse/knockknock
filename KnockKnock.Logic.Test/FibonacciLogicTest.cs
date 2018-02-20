@@ -31,14 +31,14 @@ namespace KnockKnock.Logic.Test
         public void When_Input_Is_Valid_Return_Success()
         {
             //assemble
-            Tuple<long, long>[] data = new Tuple<long, long>[]
+            var data = new List<Tuple<long, long>>
             {
-                new Tuple<long, long>(0,0),
-                new Tuple<long, long>(-1,1),
-                new Tuple<long, long>(1,1),
-                new Tuple<long, long>(15,610),
-                new Tuple<long, long>(11,89),
-                new Tuple<long, long>(-11,89)
+                new Tuple<long, long>(0, 0),
+                new Tuple<long, long>(-1, 1),
+                new Tuple<long, long>(1, 1),
+                new Tuple<long, long>(15, 610),
+                new Tuple<long, long>(11, 89),
+                new Tuple<long, long>(-11, 89)
             };
 
             //act

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using KnockKnock.Common;
 using KnockKnock.Logic;
 using KnockKnock.Service.Concrete;
@@ -12,12 +10,12 @@ namespace KnockKnock.Service.Test
     [TestClass]
     public class TriangleTypeServiceTest
     {
+        private Mock<IShapeFinderLogic> _logic;
         //
         // System Under Test
         //
 
         private TriangleTypeService _sut;
-        private Mock<IShapeFinderLogic> _logic;
 
         [TestInitialize]
         public void Setup()

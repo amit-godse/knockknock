@@ -1,19 +1,19 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using System.Net.Http;
+﻿using System.Net.Http;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
-using knockknock;
 
 namespace KnockKnock.Api.Test.Fixture
 {
     public class TestClientContext
     {
         private TestServer _server;
-        public HttpClient Client { get; private set; }
 
         public TestClientContext()
         {
             SetUpClient();
         }
+
+        public HttpClient Client { get; private set; }
 
         private void SetUpClient()
         {

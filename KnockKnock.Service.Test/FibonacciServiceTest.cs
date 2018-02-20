@@ -9,12 +9,12 @@ namespace KnockKnock.Service.Test
     [TestClass]
     public class FibonacciServiceTest
     {
+        private Mock<IFibonacciLogic> _logic;
         //
         // System under test
         //
 
         private FibonacciService _sut;
-        private Mock<IFibonacciLogic> _logic;
 
         [TestInitialize]
         public void Setup()
@@ -59,7 +59,7 @@ namespace KnockKnock.Service.Test
                     .Returns(It.IsAny<long>());
 
                 _sut = new FibonacciService(_logic.Object);
-                string expected = "x";
+                var expected = "x";
 
                 //act
                 var result = _sut.GetFibonacciNumberAtPosition(expected);

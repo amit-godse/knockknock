@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using KnockKnock.Logic.Concrete;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -31,12 +30,12 @@ namespace KnockKnock.Logic.Test
         public void When_Input_Is_Valid_Should_Return_Valid_Results()
         {
             //assemble
-            Tuple<string, string>[] data = new Tuple<string, string>[]
-            {
-                new Tuple<string, string>("",""),
-                new Tuple<string, string>("This is reverse string","sihT si esrever gnirts"),
-                new Tuple<string, string>("knockknock","kconkkconk"),
-                new Tuple<string, string>(null,null),
+            Tuple<string, string>[] data;
+            data = new[] {
+                new Tuple<string, string>("", ""),
+                new Tuple<string, string>("This is reverse string", "sihT si esrever gnirts"),
+                new Tuple<string, string>("knockknock", "kconkkconk"),
+                new Tuple<string, string>(null, null)
             };
 
             //act

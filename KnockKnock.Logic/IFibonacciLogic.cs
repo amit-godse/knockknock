@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace KnockKnock.Logic
+﻿namespace KnockKnock.Logic
 {
     public interface IFibonacciLogic
     {

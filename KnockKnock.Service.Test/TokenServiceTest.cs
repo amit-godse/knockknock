@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using KnockKnock.Logic;
 using KnockKnock.Service.Concrete;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -11,12 +9,12 @@ namespace KnockKnock.Service.Test
     [TestClass]
     public class TokenServiceTest
     {
+        private Mock<ITokenLogic> _logic;
         //
         // System Under Test
         //
 
         private TokenService _sut;
-        private Mock<ITokenLogic> _logic;
 
         [TestInitialize]
         public void Setup()

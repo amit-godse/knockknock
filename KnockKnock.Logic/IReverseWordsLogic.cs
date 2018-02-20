@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace KnockKnock.Logic
+﻿namespace KnockKnock.Logic
 {
     public interface IReverseWordsLogic
     {

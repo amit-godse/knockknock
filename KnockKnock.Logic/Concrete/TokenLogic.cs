@@ -1,18 +1,16 @@
-﻿using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using Microsoft.Extensions.Configuration;
 
 namespace KnockKnock.Logic.Concrete
 {
     public class TokenLogic : ITokenLogic
     {
-        private IConfiguration _configuration { get; }
-
         public TokenLogic(IConfiguration configuration)
         {
             _configuration = configuration;
         }
+
+        private IConfiguration _configuration { get; }
 
         public Guid GetToken()
         {

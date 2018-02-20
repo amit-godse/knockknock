@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using KnockKnock.Common;
 using KnockKnock.Logic.Concrete;
 using Microsoft.Extensions.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -11,13 +9,14 @@ namespace KnockKnock.Logic.Test
     [TestClass]
     public class TokenLogicTests
     {
+        private IConfigurationBuilder _config;
+
+        private Mock<IConfigurationRoot> _configuration;
         //
         // System Under Test
         //
 
         private TokenLogic _sut;
-        private Mock<IConfigurationRoot> _configuration;
-        private IConfigurationBuilder _config;
 
         [TestInitialize]
         public void Setup()

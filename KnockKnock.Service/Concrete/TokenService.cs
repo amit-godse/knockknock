@@ -1,18 +1,16 @@
-﻿using KnockKnock.Logic;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using KnockKnock.Logic;
 
 namespace KnockKnock.Service.Concrete
 {
     public class TokenService : ITokenService
     {
-        private ITokenLogic Service { get; }
-
         public TokenService(ITokenLogic service)
         {
             Service = service;
         }
+
+        private ITokenLogic Service { get; }
 
         public Guid GetToken()
         {

@@ -1,5 +1,3 @@
-
-
 using System.Net;
 using System.Threading.Tasks;
 using KnockKnock.Api.Test.Fixture;
@@ -32,10 +30,10 @@ namespace KnockKnock.Api.Test
         public async Task Fibonacci_Should_Return_Fibonacci_number()
         {
             //act
-            var response =await _sut.Client.GetAsync("/api/Fibonacci?n=10");
+            var response = await _sut.Client.GetAsync("/api/Fibonacci?n=10");
             var result = response.Content.ReadAsStringAsync().Result;
             Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
-            Assert.AreEqual(result,"55");
+            Assert.AreEqual(result, "55");
         }
 
 
